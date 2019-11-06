@@ -2,8 +2,8 @@ import smtplib
 
 
 
-mails = {"balaji":"balajibetadur@gmail.com",
-    "balajif1":"balajibetadurf1@gmail.com"
+mails = {"name1":"name1-email@example.com",
+    "name2":"name2-email@example.com"
     
 }
 
