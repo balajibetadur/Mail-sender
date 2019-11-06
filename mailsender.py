@@ -1,0 +1,37 @@
+import smtplib 
+
+
+
+mails = {"balaji":"balajibetadur@gmail.com",
+    "balajif1":"balajibetadurf1@gmail.com"
+    
+}
+
+
+
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.login('balajibetadurf1@gmail.com', '10935143@Bb')
+    server.sendmail('balajibetadurf1@gmail.com', to, content)
+    server.close()
+
+
+try:
+
+    #takes input from user and checks whom to send mail from dictionary provided above
+    re=input("whom to send:\t")
+    
+    to = mails[re] 
+
+    content=input("What should I say: \t")
+    
+    sendEmail(to, content)
+    print(f"reciever{to}")
+    print(f"message{content}")
+
+    print("Email has been sent!")
+except Exception as e:
+    print(e)
+    print("not able to send email..check wheather the reciever is there on list...")
